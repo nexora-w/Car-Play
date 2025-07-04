@@ -2,7 +2,7 @@
 //  UserD.swift
 //  TDS Video
 //
-//  Created by Thomas Dye on 25/03/2025.
+//  Created by Nexora on 25/03/2025.
 //
 
 
@@ -20,8 +20,8 @@ import UIKit
 class TDSVideoURlFromOutSideOFAppListener {
     static let shared = TDSVideoURlFromOutSideOFAppListener()
 
-    private  let notificationName = "group.net.thomasdye.TDS-docs.TDVideo-SharedURL"
-    private  let sharedDefaults = UserDefaults(suiteName: "group.net.thomasdye.TDS-docs")
+    private  let notificationName = "group.net.Nexora.TDS-docs.TDVideo-SharedURL"
+    private  let sharedDefaults = UserDefaults(suiteName: "group.net.Nexora.TDS-docs")
 
     var onUpdate: ((String) -> Void)?
 

@@ -16,7 +16,7 @@
 	<string>K3S7UENN8E</string>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.net.thomasdye.Auth_Creds</string>
+		<string>group.net.Nexora.Auth_Creds</string>
 	</array>
 	<key>get-task-allow</key>
 	<true/>

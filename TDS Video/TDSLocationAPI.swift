@@ -2,7 +2,7 @@
 //  TDSLocationAPI.swift
 //  TDS Video
 //
-//  Created by Thomas Dye on 17/03/2025.
+//  Created by Nexora on 17/03/2025.
 //
 
 import Foundation

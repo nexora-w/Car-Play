@@ -2,7 +2,7 @@
 //  SceneDelegate.swift
 //  TDS McdonaldsApi
 //
-//  Created by Thomas Dye on 02/08/2024.
+//  Created by Nexora on 02/08/2024.
 //
 
 import UIKit
@@ -45,7 +45,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
            // Scene became active
            print("The scene is active.")
            ScreenCaptureManager.shared.InForeground()
-           let userDefaults = UserDefaults(suiteName: "group.net.thomasdye.TDS-docs")
+           let userDefaults = UserDefaults(suiteName: "group.net.Nexora.TDS-docs")
 
                // Observe changes to "TDSSharedURL"
 //               userDefaults?.addObserver(self, forKeyPath: "TDSSharedURL", options: .new, context: nil)

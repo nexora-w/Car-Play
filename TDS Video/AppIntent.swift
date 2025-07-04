@@ -2,7 +2,7 @@
 //  AppIntent.swift
 //  TDS Video
 //
-//  Created by Thomas Dye on 25/03/2025.
+//  Created by Nexora on 25/03/2025.
 //
 
 
@@ -19,11 +19,11 @@ struct SaveToSharedDefaultsIntent: AppIntent {
 
     func perform() async throws -> some IntentResult {
         // Replace with your actual App Group ID
-        let sharedDefaults = UserDefaults(suiteName: "group.net.thomasdye.TDS-docs")
+        let sharedDefaults = UserDefaults(suiteName: "group.net.Nexora.TDS-docs")
         sharedDefaults?.set(textToSave, forKey: "TDVideo-SharedURL")
         
         // Post cross-process notification
-               let notificationName = "group.net.thomasdye.TDS-docs.TDVideo-SharedURL"
+               let notificationName = "group.net.Nexora.TDS-docs.TDVideo-SharedURL"
                CFNotificationCenterPostNotification(
                    CFNotificationCenterGetDarwinNotifyCenter(),
                    CFNotificationName(notificationName as CFString),

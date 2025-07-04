@@ -2,7 +2,7 @@
 //  AVPlayerViewController+ButtonInteractionSwizzling.m
 //  TDS Video
 //
-//  Created by Thomas Dye on 06/08/2024.
+//  Created by Nexora on 06/08/2024.
 //
 
 #import "AVPlayerViewController+ButtonInteractionSwizzling.h"

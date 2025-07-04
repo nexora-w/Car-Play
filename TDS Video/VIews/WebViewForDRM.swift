@@ -2,7 +2,7 @@
 //  WebViewForDRM.swift
 //  TDS Video
 //
-//  Created by Thomas Dye on 13/04/2025.
+//  Created by Nexora on 13/04/2025.
 //
 
 import SwiftUI

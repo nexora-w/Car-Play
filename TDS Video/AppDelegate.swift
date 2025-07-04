@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  TDS McdonaldsApi
 //
-//  Created by Thomas Dye on 02/08/2024.
+//  Created by Nexora on 02/08/2024.
 //
 
 import UIKit
@@ -82,7 +82,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         print(keyPath)
         if keyPath == "TDVideo-SharedURL" {
-            let userDefaults = UserDefaults(suiteName: "group.net.thomasdye.TDS-docs")
+            let userDefaults = UserDefaults(suiteName: "group.net.Nexora.TDS-docs")
 
             if let sharedURLString = userDefaults?.string(forKey: "TDVideo-SharedURL"),
                let sharedURL = URL(string: sharedURLString) {

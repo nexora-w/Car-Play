@@ -2,7 +2,7 @@
 //  ScreenMirroingSettings.swift
 //  TDS Video
 //
-//  Created by Thomas Dye on 20/03/2025.
+//  Created by Nexora on 20/03/2025.
 //
 
 import SwiftUI

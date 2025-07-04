@@ -2,7 +2,7 @@
 //  MDapiClass.swift
 //  TDS McdonaldsApi
 //
-//  Created by Thomas Dye on 02/08/2024.
+//  Created by Nexora on 02/08/2024.
 //
 
 import Foundation
@@ -84,7 +84,7 @@ struct  CarplayComClass {
       }
     
     func loadSharedURL() -> URL? {
-        let userDefaults = UserDefaults(suiteName: "group.net.thomasdye.TDS-docs")
+        let userDefaults = UserDefaults(suiteName: "group.net.Nexora.TDS-docs")
         if let urlString = userDefaults?.string(forKey: "TDSSharedURL") {
             return URL(string: urlString)
         }
@@ -94,7 +94,7 @@ struct  CarplayComClass {
     // TDSSharedVideo
 
     func loadSharedURLVideo() -> String? {
-        let userDefaults = UserDefaults(suiteName: "group.net.thomasdye.TDS-docs")
+        let userDefaults = UserDefaults(suiteName: "group.net.Nexora.TDS-docs")
         if let urlString = userDefaults?.string(forKey: "TDSSharedVideo") {
             return urlString
         }
@@ -159,12 +159,12 @@ class ErrorHandling:NSObject {
 class ManagmentURLS {
     static let shared = ManagmentURLS()
     func fetchOrders() -> URL {
-        return URL(string: "https://api.thomasdye.net/app/ThomasRandom/mcdonalds/backend/V1/Api/getOrders")!
+        return URL(string: "https://api.Nexora.net/app/ThomasRandom/mcdonalds/backend/V1/Api/getOrders")!
     }
 //     updload token mcdonalds/backend/V1/Api/ "uploadAccessToken"
     
     func UploadToken(_ token:String) -> URL {
-        return URL(string: "https://api.thomasdye.net/app/ThomasRandom/mcdonalds/backend/V1/Api/\(token)")!
+        return URL(string: "https://api.Nexora.net/app/ThomasRandom/mcdonalds/backend/V1/Api/\(token)")!
     }
 }
 

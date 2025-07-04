@@ -2,7 +2,7 @@
 //  MainView.swift
 //  TDS McdonaldsApi
 //
-//  Created by Thomas Dye on 02/08/2024.
+//  Created by Nexora on 02/08/2024.
 //
 
 import SwiftUI
@@ -120,7 +120,7 @@ struct MainView: View {
                                 .foregroundColor(.purple)
                         }
 
-                        Text("© 2025 Thomas Dye. All rights reserved.")
+                        Text("© 2025 Nexora. All rights reserved.")
                             .font(.caption2)
                             .foregroundColor(.secondary)
                             .padding(.top, 6)
@@ -177,7 +177,7 @@ struct MainView: View {
     }
 
     func openGitHubRepo() {
-        openURL("https://github.com/thomasdye12/TDS-Carplay")
+        openURL("https://github.com/Nexora12/TDS-Carplay")
     }
 
     func openURL(_ urlString: String) {

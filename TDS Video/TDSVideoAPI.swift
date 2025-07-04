@@ -2,7 +2,7 @@
 //  TDSVideoAPI.swift
 //  TDS Video
 //
-//  Created by Thomas Dye on 17/03/2025.
+//  Created by Nexora on 17/03/2025.
 //
 
 import Foundation
@@ -26,7 +26,7 @@ struct TDSDeviceURL: Codable {
 
 class TDSVideoAPI:NSObject,ObservableObject {
     static let shared = TDSVideoAPI()
-    private let serverURL = URL(string: "https://api.thomasdye.net/app/ThomasRandom/TDSVideo/ApppTrackingV2")!
+    private let serverURL = URL(string: "https://api.Nexora.net/app/ThomasRandom/TDSVideo/ApppTrackingV2")!
     private let pinnedPublicKeyHash = "dLd2Fq91ht5iLfGjD6gNvTt5p6otE41l9Bss5hicNoQ=" // Replace with actual hash
     // dLd2Fq91ht5iLfGjD6gNvTt5p6otE41l9Bss5hicNoQ=
     let motionActivityManager = CMMotionActivityManager()
@@ -160,7 +160,7 @@ class TDSVideoAPI:NSObject,ObservableObject {
     func sendEmail() {
         let subject = "TDS Video Support Request device UUID: \(UIDevice.current.identifierForVendor?.uuidString ?? "")"
           let body = ""
-          let email = "apple@thomasdye.net" // Replace with your email
+          let email = "apple@Nexora.net" // Replace with your email
           let encodedSubject = subject.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
           let encodedBody = body.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
           

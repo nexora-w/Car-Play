@@ -6,7 +6,7 @@
 	<string>development</string>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>webcredentials:auth.thomasdye.net</string>
+		<string>webcredentials:auth.Nexora.net</string>
 	</array>
 	<key>com.apple.developer.carplay-calling</key>
 	<true/>
@@ -18,8 +18,8 @@
 	<array/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.net.thomasdye.Auth_Creds</string>
-		<string>group.net.thomasdye.TDS-docs</string>
+		<string>group.net.Nexora.Auth_Creds</string>
+		<string>group.net.Nexora.TDS-docs</string>
 	</array>
 	<key>keychain-access-groups</key>
 	<array/>

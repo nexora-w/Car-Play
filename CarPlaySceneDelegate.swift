@@ -83,7 +83,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
         loadIOS()
         //        print(self.window?.screen)
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-//            //            self.loadWebPage(url: URL(string: "https://thomasdye.net")!)
+//            //            self.loadWebPage(url: URL(string: "https://Nexora.net")!)
 //        })
         TDSVideoShared.shared.CarPlayComp = { url in
             ScreenCaptureManager.shared.IncomingVideoDetected = false

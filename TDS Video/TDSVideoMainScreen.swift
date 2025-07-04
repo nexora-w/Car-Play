@@ -2,7 +2,7 @@
 //  TDSVideoMainScreen.swift
 //  TDS Video
 //
-//  Created by Thomas Dye on 16/04/2025.
+//  Created by Nexora on 16/04/2025.
 //
 // This file is show I can show apple something else to get it approved 
 

@@ -2,7 +2,7 @@
 //  webview.swift
 //  TDS Video
 //
-//  Created by Thomas Dye on 05/08/2024.
+//  Created by Nexora on 05/08/2024.
 //
 
 import SwiftUI

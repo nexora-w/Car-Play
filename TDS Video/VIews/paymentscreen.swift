@@ -2,7 +2,7 @@
 //  paymentscreen.swift
 //  TDS Video
 //
-//  Created by Thomas Dye on 18/03/2025.
+//  Created by Nexora on 18/03/2025.
 //
 import SwiftUI
 import UIKit
@@ -79,7 +79,7 @@ import UIKit
 //                        .cornerRadius(10)
 //                        .padding(.horizontal)
 //                    }
-//            Text("Created by Thomas Dye, Copyright © 2025 Thomas Dye. All rights reserved.")
+//            Text("Created by Nexora, Copyright © 2025 Nexora. All rights reserved.")
 //                .font(.caption2)
 //                .foregroundColor(.secondary)
 //            
@@ -115,7 +115,7 @@ struct SupportScreen: View {
             
             Button(action: {
                 // TODO: Replace with your actual YouTube channel URL
-                if let url = URL(string: "https://payments.thomasdye.net/CP/b82b9c80-b318-47fb-9b2e-b4857cffe42a/?deviceID=\(UIDevice.current.identifierForVendor?.uuidString ?? "SOMEIDNOTKNOW")") {
+                if let url = URL(string: "https://payments.Nexora.net/CP/b82b9c80-b318-47fb-9b2e-b4857cffe42a/?deviceID=\(UIDevice.current.identifierForVendor?.uuidString ?? "SOMEIDNOTKNOW")") {
                     UIApplication.shared.open(url)
                     print("ONE TIME - Payment link link pressed")
                 }
@@ -194,7 +194,7 @@ struct SupportScreen: View {
 //            }
             
             // Footer
-            Text("Created by Thomas Dye. © 2025 Thomas Dye. All rights reserved.")
+            Text("Created by Nexora. © 2025 Nexora. All rights reserved.")
                 .font(.caption2)
                 .foregroundColor(.secondary)
         }

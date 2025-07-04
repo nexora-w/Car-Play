@@ -2,7 +2,7 @@
 //  ScreenCaptureManager.swift
 //  TDS Video
 //
-//  Created by Thomas Dye on 11/01/2025.
+//  Created by Nexora on 11/01/2025.
 //
 import UIKit
 import AVFoundation

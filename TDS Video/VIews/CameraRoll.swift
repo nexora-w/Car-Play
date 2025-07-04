@@ -2,7 +2,7 @@
 //  CameraRoll.swift
 //  TDS Video
 //
-//  Created by Thomas Dye on 19/03/2025.
+//  Created by Nexora on 19/03/2025.
 //
 
 import SwiftUI

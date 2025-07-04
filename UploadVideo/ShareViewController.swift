@@ -2,7 +2,7 @@
 //  ShareViewController.swift
 //  UploadVideo
 //
-//  Created by Thomas Dye on 05/08/2024.
+//  Created by Nexora on 05/08/2024.
 //
 
 import UIKit
@@ -49,11 +49,11 @@ class ShareViewController: SLComposeServiceViewController {
     }
     
     private func saveURL(url: URL) {
-        let sharedDefaults = UserDefaults(suiteName: "group.net.thomasdye.TDS-docs")
+        let sharedDefaults = UserDefaults(suiteName: "group.net.Nexora.TDS-docs")
         sharedDefaults?.set(url.absoluteString, forKey: "TDVideo-SharedURL")
         
         // Post cross-process notification
-               let notificationName = "group.net.thomasdye.TDS-docs.TDVideo-SharedURL"
+               let notificationName = "group.net.Nexora.TDS-docs.TDVideo-SharedURL"
                CFNotificationCenterPostNotification(
                    CFNotificationCenterGetDarwinNotifyCenter(),
                    CFNotificationName(notificationName as CFString),

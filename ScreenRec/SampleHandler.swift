@@ -2,7 +2,7 @@
 //  SampleHandler.swift
 //  ScreenRec
 //
-//  Created by Thomas Dye on 11/01/2025.
+//  Created by Nexora on 11/01/2025.
 //
 
 import ReplayKit
