@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 74;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -106,125 +106,100 @@
 		E9D513592D79B5C800B8A8B3 /* CarPlayViewContollerProtocal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayViewContollerProtocal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		E9449D222C616C4100EE64DF /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				/Localized/MainInterface.storyboard,
-				Info.plist,
-			);
-			target = E9449D132C616C4100EE64DF /* UploadVideo */;
-		};
-		E96BB7502D32872D007BE3A8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = E96BB73E2D32872C007BE3A8 /* ScreenRecSetupUI */;
-		};
-		E96BB7542D32872D007BE3A8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = E96BB7332D32872C007BE3A8 /* ScreenRec */;
-		};
-		E96BB78B2D3297BA007BE3A8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				HTTPServer.swift,
-				"Transcoding/Extensions/Data+Extensions.swift",
-				"Transcoding/Extensions/VTCompressionSession+Extensions.swift",
-				"Transcoding/Extensions/VTDecompressionSession+Extensions.swift",
-				Transcoding/NALUs/H264NALU.swift,
-				Transcoding/NALUs/HEVCNALU.swift,
-				Transcoding/VideoDecoder.swift,
-				"Transcoding/VideoDecoder+Config.swift",
-				Transcoding/VideoDecoderAnnexBAdaptor.swift,
-				Transcoding/VideoEncoder.swift,
-				"Transcoding/VideoEncoder+Config.swift",
-				Transcoding/VideoEncoderAnnexBAdaptor.swift,
-				Transcoding/VideoTranscoderError.swift,
-			);
-			target = E96BB7332D32872C007BE3A8 /* ScreenRec */;
-		};
-		E96BB78C2D3297BA007BE3A8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				"Transcoding/Extensions/Data+Extensions.swift",
-				"Transcoding/Extensions/VTCompressionSession+Extensions.swift",
-				"Transcoding/Extensions/VTDecompressionSession+Extensions.swift",
-				Transcoding/NALUs/H264NALU.swift,
-				Transcoding/NALUs/HEVCNALU.swift,
-				Transcoding/VideoDecoder.swift,
-				"Transcoding/VideoDecoder+Config.swift",
-				Transcoding/VideoDecoderAnnexBAdaptor.swift,
-				Transcoding/VideoEncoder.swift,
-				"Transcoding/VideoEncoder+Config.swift",
-				Transcoding/VideoEncoderAnnexBAdaptor.swift,
-				Transcoding/VideoTranscoderError.swift,
-			);
-			target = E96BB73E2D32872C007BE3A8 /* ScreenRecSetupUI */;
-		};
-		E9B371472C5D7B850013612E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				/Localized/LaunchScreen.storyboard,
-				/Localized/Main.storyboard,
-				Info.plist,
-			);
-			target = E9B3711E2C5D7B830013612E /* TDS Video */;
-		};
-		E9B371C42C5D86080013612E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				/Localized/MainInterface.storyboard,
-				Info.plist,
-			);
-			target = E9B371B02C5D86080013612E /* CarplayintentUI */;
-		};
-		E9B371C92C5D86080013612E /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = E9B371A42C5D86080013612E /* Carplayintent */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		E9449D232C616C4100EE64DF /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = E9449D122C616C4100EE64DF /* Resources */;
-			membershipExceptions = (
-				Base.lproj/MainInterface.storyboard,
-			);
-		};
-		E9B3714B2C5D7B850013612E /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = E9B3711D2C5D7B830013612E /* Resources */;
-			membershipExceptions = (
-				Base.lproj/LaunchScreen.storyboard,
-				Base.lproj/Main.storyboard,
-			);
-		};
-		E9B371C52C5D86080013612E /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = E9B371AF2C5D86080013612E /* Resources */;
-			membershipExceptions = (
-				Base.lproj/MainInterface.storyboard,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		E9449D152C616C4100EE64DF /* UploadVideo */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (E9449D222C616C4100EE64DF /* PBXFileSystemSynchronizedBuildFileExceptionSet */, E9449D232C616C4100EE64DF /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = UploadVideo; sourceTree = "<group>"; };
-		E96BB7372D32872C007BE3A8 /* ScreenRec */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (E96BB7542D32872D007BE3A8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ScreenRec; sourceTree = "<group>"; };
-		E96BB7432D32872D007BE3A8 /* ScreenRecSetupUI */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (E96BB7502D32872D007BE3A8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = ScreenRecSetupUI; sourceTree = "<group>"; };
-		E9B371212C5D7B830013612E /* TDS Video */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (E9B371472C5D7B850013612E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, E9B3714B2C5D7B850013612E /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, E96BB78B2D3297BA007BE3A8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, E96BB78C2D3297BA007BE3A8 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = "TDS Video"; sourceTree = "<group>"; };
-		E9B371A92C5D86080013612E /* Carplayintent */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (E9B371C92C5D86080013612E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Carplayintent; sourceTree = "<group>"; };
-		E9B371B42C5D86080013612E /* CarplayintentUI */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (E9B371C42C5D86080013612E /* PBXFileSystemSynchronizedBuildFileExceptionSet */, E9B371C52C5D86080013612E /* PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = CarplayintentUI; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
+
+
+/* Begin PBXGroup section */
+		E9B371162C5D7B830013612E = {
+			isa = PBXGroup;
+			children = (
+				E9B01EC72DB094DF008CDD3F /* README.md */,
+				E9B01ECB2DB0994B008CDD3F /* CarPlayAccess.swift */,
+				E9D513592D79B5C800B8A8B3 /* CarPlayViewContollerProtocal.swift */,
+				E9449D242C616DAF00EE64DF /* CarplayWKWebView.swift */,
+				E92F0F312DABD34F00ACB85D /* CarPlaySafari.swift */,
+				E9B3719F2C5D85D60013612E /* CarPlaySceneDelegate.swift */,
+				E9B5432A2C60EEE700BCD407 /* CustomVideoPlayerViewController.swift */,
+				E98E7DCB2D8DF6F5008330D0 /* CustomWebViews.swift */,
+				E9B371212C5D7B830013612E /* TDS Video */,
+				E9B371A92C5D86080013612E /* Carplayintent */,
+				E9B371B42C5D86080013612E /* CarplayintentUI */,
+				E9449D152C616C4100EE64DF /* UploadVideo */,
+				E96BB7372D32872C007BE3A8 /* ScreenRec */,
+				E96BB7432D32872D007BE3A8 /* ScreenRecSetupUI */,
+				E9B371A62C5D86080013612E /* Frameworks */,
+				E9B371202C5D7B830013612E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E9B371202C5D7B830013612E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E9B3711F2C5D7B830013612E /* TDS Video.app */,
+				E9B371A52C5D86080013612E /* Carplayintent.appex */,
+				E9B371B12C5D86080013612E /* CarplayintentUI.appex */,
+				E9449D142C616C4100EE64DF /* UploadVideo.appex */,
+				E96BB7342D32872C007BE3A8 /* ScreenRec.appex */,
+				E96BB73F2D32872D007BE3A8 /* ScreenRecSetupUI.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E9B371A62C5D86080013612E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E9B371A72C5D86080013612E /* Intents.framework */,
+				E9B371B22C5D86080013612E /* IntentsUI.framework */,
+				E96BB7352D32872C007BE3A8 /* ReplayKit.framework */,
+				E96BB7412D32872D007BE3A8 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E9449D152C616C4100EE64DF /* UploadVideo */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UploadVideo;
+			sourceTree = "<group>";
+		};
+		E96BB7372D32872C007BE3A8 /* ScreenRec */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ScreenRec;
+			sourceTree = "<group>";
+		};
+		E96BB7432D32872D007BE3A8 /* ScreenRecSetupUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ScreenRecSetupUI;
+			sourceTree = "<group>";
+		};
+		E9B371212C5D7B830013612E /* TDS Video */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "TDS Video";
+			sourceTree = "<group>";
+		};
+		E9B371A92C5D86080013612E /* Carplayintent */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Carplayintent;
+			sourceTree = "<group>";
+		};
+		E9B371B42C5D86080013612E /* CarplayintentUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CarplayintentUI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		E9449D112C616C4100EE64DF /* Frameworks */ = {
@@ -340,8 +315,7 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				E9449D152C616C4100EE64DF /* UploadVideo */,
+			buildRules = (
 			);
 			name = UploadVideo;
 			packageProductDependencies = (
@@ -362,8 +336,7 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				E96BB7372D32872C007BE3A8 /* ScreenRec */,
+			buildRules = (
 			);
 			name = ScreenRec;
 			packageProductDependencies = (
@@ -385,8 +358,7 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				E96BB7432D32872D007BE3A8 /* ScreenRecSetupUI */,
+			buildRules = (
 			);
 			name = ScreenRecSetupUI;
 			packageProductDependencies = (
@@ -413,8 +385,7 @@
 				E96BB74B2D32872D007BE3A8 /* PBXTargetDependency */,
 				E9E926C32D934C5C00762912 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				E9B371212C5D7B830013612E /* TDS Video */,
+			buildRules = (
 			);
 			name = "TDS Video";
 			packageProductDependencies = (
@@ -436,8 +407,7 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				E9B371A92C5D86080013612E /* Carplayintent */,
+			buildRules = (
 			);
 			name = Carplayintent;
 			packageProductDependencies = (
@@ -458,8 +428,7 @@
 			);
 			dependencies = (
 			);
-			fileSystemSynchronizedGroups = (
-				E9B371B42C5D86080013612E /* CarplayintentUI */,
+			buildRules = (
 			);
 			name = CarplayintentUI;
 			packageProductDependencies = (
@@ -510,7 +479,7 @@
 			packageReferences = (
 				E9B01D3A2DAFD055008CDD3F /* XCRemoteSwiftPackageReference "swifter" */,
 			);
-			preferredProjectObjectVersion = 60;
+			preferredProjectObjectVersion = 56;
 			productRefGroup = E9B371202C5D7B830013612E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
