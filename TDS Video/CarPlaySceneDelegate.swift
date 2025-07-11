@@ -1,83 +1,43 @@
-//
-//  CarPlaySceneDelegate.swift
-//  TDS doc store
-//
-//  Created by thomas on 23/09/2022.
-//
-
 import CarPlay
 import UIKit
 import AVKit
 import ReplayKit
 
-// Import custom modules
-@_exported import class TDS_Video.TDSVideoShared
-@_exported import class TDS_Video.ScreenCaptureManager
-@_exported import class TDS_Video.TDSVideoURlFromOutSideOFAppListener
-@_exported import class TDS_Video.CustomWebViewController
-@_exported import class TDS_Video.TDSCarplayAccess
-
 extension CPTemplateApplicationScene {
-    
-    
-    
     func _shouldCreateCarWindow() -> Bool {
         print("CPTemplateApplicationScene")
         return true
     }
 }
 
-
-
 class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPMapTemplateDelegate {
-    
     var window: UIWindow?
     var interfaceController: CPInterfaceController?
     var player: AVPlayer?
     var playerViewController: CustomVideoPlayerViewController?
-    var webViewController:CarPlayViewControllerProtocol?
+    var webViewController: CarPlayViewControllerProtocol?
     var templateApplicationScene: CPTemplateApplicationScene?
     var mapTemplate: CPMapTemplate?
     var CarPlayVideoImageView: UIImageView = UIImageView()
-    let offsetStyle: SingleEdgeOffset = .left(40) // <- change this to .right(40), .top(20), etc.
-     
-    
+    let offsetStyle: SingleEdgeOffset = .left(40)
     
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene, didConnect interfaceController: CPInterfaceController) {
     }
     
-    
-    //
-    //
-    //    func deliveringInterfaceControllerToDelegate(_ interfaceController: CPInterfaceController) {
-    //        print("this is here ")
-    //    }
-    //
-    //     func  _deliverInterfaceControllerToDelegate(_ interfaceController: CPInterfaceController) {
-    //        print("this is here ")
-    //    }
-    
-    
     func templateApplicationScene(_ templateApplicationScene: CPTemplateApplicationScene,
-                                  didConnect interfaceController: CPInterfaceController, to window: CPWindow) {
-        
-
-        if TDSCarplayAccess.shared.ShowTDSCarPlaySettings == false  {
-            
+                                didConnect interfaceController: CPInterfaceController, to window: CPWindow) {
+        if TDSCarplayAccess.shared.ShowTDSCarPlaySettings == false {
             return
         }
-        let bool:Bool = templateApplicationScene._shouldCreateCarWindow()
+        
+        let bool: Bool = templateApplicationScene._shouldCreateCarWindow()
         print(bool)
-        /*emplateApplicationScene.test()*/
         
         self.interfaceController = interfaceController
         print(templateApplicationScene.carWindow.isUserInteractionEnabled)
-//        self.interfaceController._carwin
         window.windowLevel = .alert
         window.rootViewController = UIViewController()
         window.makeKeyAndVisible()
-       
-  
         
         self.window = window
         self.window?.isUserInteractionEnabled = false
@@ -87,32 +47,22 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
         print(window.isKeyWindow)
         print(window.canBecomeKey)
         window.makeKeyAndVisible()
-//        self.interfaceController?.presentTemplate(self.mapTemplate!, animated: true)
         loadIOS()
-        //        print(self.window?.screen)
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-//            //            self.loadWebPage(url: URL(string: "https://Nexora.net")!)
-//        })
+        
         TDSVideoShared.shared.CarPlayComp = { (url: CarplayComClass) in
             ScreenCaptureManager.shared.IncomingVideoDetected = false
             switch url.type {
             case .video:
                 self.playVideo(url: url.URL!)
-            
             case .web:
                 self.loadWebPage()
-                
             case .rawVideo:
                 self.rawVideo(player: url.AVplayer)
-                
             case .IOSAPP:
                 DispatchQueue.main.async {
                     self.loadIOS()
                 }
             }
-            
-            
-            
         }
         
         TDSVideoURlFromOutSideOFAppListener.shared.onUpdate = { (url: String) in
@@ -122,15 +72,9 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
                 TDSVideoShared.shared.CarPlayComp?(CarplayComClass(type: .web, URL: url, AVplayer: nil, reloadWeb: nil))
             }
         }
-        
-
-        
     }
     
-    
-    
-    func rawVideo(player:AVPlayer?) {
-
+    func rawVideo(player: AVPlayer?) {
         guard let player else { return }
         let newPlayer = CustomVideoPlayerViewController()
         
@@ -140,81 +84,32 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
             newPlayer.view.frame = rootViewController.view.bounds
             newPlayer.didMove(toParent: rootViewController)
             newPlayer.setupPlayer(player: player)
-            //                playerViewController.
-            //                       playerViewController.setupPlayer(url: url)
         }
     }
     
-    
-    func playVideo(url:URL) {
-                self.playerViewController = nil
-                self.window?.rootViewController = UIViewController()
-            
-//
+    func playVideo(url: URL) {
+        self.playerViewController = nil
+        self.window?.rootViewController = UIViewController()
+        
         self.playerViewController = CustomVideoPlayerViewController()
-     
+        
         guard let playerViewController = playerViewController else {
-            
             print("no root view")
-            return }
-//        playerViewController.player = AVPlayer(url: url)
+            return
+        }
         
-                if let rootViewController = self.window?.rootViewController  {
-                    rootViewController.addChild(playerViewController)
-                    rootViewController.view.addSubview(playerViewController.view)
-                    playerViewController.view.frame = rootViewController.view.bounds
-                    playerViewController.didMove(toParent: rootViewController)
-                    //                playerViewController.
-                    playerViewController.setupPlayer(url: url)
-                }
-        
-        
-
-//        let player  = AVPlayerViewController()
-//                player.player = AVPlayer(url: url)
-//        //        player.volumeControlsCanShowSlider = false
-//
-//
-//        let playerViewController = player
-//
-//
-//        if let rootViewController = ErrorHandling.Shared.MainVC {
-//            rootViewController.addChild(playerViewController)
-//            rootViewController.view.addSubview(playerViewController.view)
-//            playerViewController.view.frame = rootViewController.view.bounds
-//            playerViewController.didMove(toParent: rootViewController)
-//            //                playerViewController.
-//            //                       playerViewController.setupPlayer(url: url)
-//        }
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
-//            let avcontent = playerViewController.player
-//            let newPlayer = CustomVideoPlayerViewController()
-//
-//            if let rootViewController = self.window?.rootViewController {
-//                rootViewController.addChild(newPlayer)
-//                rootViewController.view.addSubview(newPlayer.view)
-//                newPlayer.view.frame = rootViewController.view.bounds
-//                newPlayer.didMove(toParent: rootViewController)
-//                newPlayer.setupPlayer(player: avcontent!)
-//                //                playerViewController.
-//                //                       playerViewController.setupPlayer(url: url)
-//            }
-//
-//
-//        })
+        if let rootViewController = self.window?.rootViewController {
+            rootViewController.addChild(playerViewController)
+            rootViewController.view.addSubview(playerViewController.view)
+            playerViewController.view.frame = rootViewController.view.bounds
+            playerViewController.didMove(toParent: rootViewController)
+            playerViewController.setupPlayer(url: url)
+        }
     }
-
-        
-
-
     
- 
     func loadWebPage() {
         webViewController = CustomWebViewController.shared.loadViewIncar(self.window)
-     
-        
     }
-    
     
     func loadIOS() {
         for subview in window!.subviews {
@@ -225,8 +120,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
         self.window?.isUserInteractionEnabled = true
         self.window?.rootViewController = UIViewController()
         self.window?.rootViewController?.view.isUserInteractionEnabled = true
-
-        // Properly add the CustomWebViewController's view to the window
+        
         if let rootViewController = self.window?.rootViewController {
             CarPlayVideoImageView.backgroundColor = .black
             CarPlayVideoImageView.contentMode = .scaleAspectFill
@@ -243,7 +137,6 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
         }
     }
 }
-
 
 enum SingleEdgeOffset {
     case none
@@ -267,6 +160,7 @@ extension SingleEdgeOffset {
         if case .right(let v) = self { return -v } else { return 0 }
     }
 }
+
 extension SingleEdgeOffset {
     // Presets
     static let leftDefault: SingleEdgeOffset = .left(40)
@@ -275,6 +169,7 @@ extension SingleEdgeOffset {
     static let bottomDefault: SingleEdgeOffset = .bottom(40)
     static let noneDefault: SingleEdgeOffset = .none
 }
+
 extension SingleEdgeOffset {
     var rawValue: String {
         switch self {
@@ -285,7 +180,7 @@ extension SingleEdgeOffset {
         case .right(let v): return "right:\(v)"
         }
     }
-
+    
     init?(rawValue: String) {
         if rawValue == "none" {
             self = .none
@@ -308,9 +203,9 @@ extension SingleEdgeOffset {
 
 enum OffsetOption: String, CaseIterable, Identifiable {
     case none, top, bottom, left, right
-
+    
     var id: String { self.rawValue }
-
+    
     var displayName: String {
         switch self {
         case .none: return "None"
@@ -320,7 +215,7 @@ enum OffsetOption: String, CaseIterable, Identifiable {
         case .right: return "Right"
         }
     }
-
+    
     var offset: SingleEdgeOffset {
         switch self {
         case .none: return .none
@@ -330,7 +225,7 @@ enum OffsetOption: String, CaseIterable, Identifiable {
         case .right: return .right(40)
         }
     }
-
+    
     static func from(offset: SingleEdgeOffset) -> OffsetOption {
         switch offset {
         case .none: return .none
@@ -340,4 +235,4 @@ enum OffsetOption: String, CaseIterable, Identifiable {
         case .right: return .right
         }
     }
-}
+} 
