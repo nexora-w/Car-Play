@@ -8,6 +8,7 @@
 import CarPlay
 import UIKit
 import AVKit
+import ReplayKit
 
 
 extension CPTemplateApplicationScene {
@@ -85,7 +86,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
 //        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
 //            //            self.loadWebPage(url: URL(string: "https://Nexora.net")!)
 //        })
-        TDSVideoShared.shared.CarPlayComp = { url in
+        TDSVideoShared.shared.CarPlayComp = { (url: CarplayComClass) in
             ScreenCaptureManager.shared.IncomingVideoDetected = false
             switch url.type {
             case .video:
@@ -95,7 +96,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
                 self.loadWebPage()
                 
                 case .rawVideo:
-                self.rawVideo(player:  url.AVplayer)
+                self.rawVideo(player: url.AVplayer)
                 
             case .IOSAPP:
                 DispatchQueue.main.async {
@@ -107,7 +108,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
             
         }
         
-        TDSVideoURlFromOutSideOFAppListener.shared.onUpdate = {url in
+        TDSVideoURlFromOutSideOFAppListener.shared.onUpdate = { (url: String) in
             print(url)
             if let url = URL(string: url) {
                 CustomWebViewController.shared.loadURL(url)
@@ -210,7 +211,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
     
     func loadIOS() {
         
-        ScreenCaptureManager.shared.CarPlaysideofcarchange = { offset in
+        ScreenCaptureManager.shared.CarPlaysideofcarchange = { (offset: SingleEdgeOffset) in
             DispatchQueue.main.async {
                 if let rootViewController = self.window?.rootViewController {
                     // Remove all existing constraints affecting CarPlayVideoImageView
