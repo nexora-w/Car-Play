@@ -2,6 +2,7 @@ import CarPlay
 import UIKit
 import AVKit
 import ReplayKit
+import Foundation
 
 extension CPTemplateApplicationScene {
     func _shouldCreateCarWindow() -> Bool {
@@ -49,7 +50,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
         window.makeKeyAndVisible()
         loadIOS()
         
-        TDSVideoShared.shared.CarPlayComp = { (url: CarplayComClass) in
+        TDSVideoShared.shared.CarPlayComp = { [weak self] (url: CarplayComClass) in
+            guard let self = self else { return }
             ScreenCaptureManager.shared.IncomingVideoDetected = false
             switch url.type {
             case .video:
@@ -65,7 +67,8 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
             }
         }
         
-        TDSVideoURlFromOutSideOFAppListener.shared.onUpdate = { (url: String) in
+        TDSVideoURlFromOutSideOFAppListener.shared.onUpdate = { [weak self] (url: String) in
+            guard let self = self else { return }
             print(url)
             if let url = URL(string: url) {
                 CustomWebViewController.shared.loadURL(url)
