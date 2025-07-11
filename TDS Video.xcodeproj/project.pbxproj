@@ -119,8 +119,6 @@
 				E9D513592D79B5C800B8A8B3 /* CarPlayViewContollerProtocal.swift */,
 				E9449D242C616DAF00EE64DF /* CarplayWKWebView.swift */,
 				E92F0F312DABD34F00ACB85D /* CarPlaySafari.swift */,
-				E9B3719F2C5D85D60013612E /* CarPlaySceneDelegate.swift */,
-				E9B5432A2C60EEE700BCD407 /* CustomVideoPlayerViewController.swift */,
 				E98E7DCB2D8DF6F5008330D0 /* CustomWebViews.swift */,
 				E9B371212C5D7B830013612E /* TDS Video */,
 				E9B371A92C5D86080013612E /* Carplayintent */,
@@ -181,6 +179,8 @@
 		E9B371212C5D7B830013612E /* TDS Video */ = {
 			isa = PBXGroup;
 			children = (
+				E9B3719F2C5D85D60013612E /* CarPlaySceneDelegate.swift */,
+				E9B5432A2C60EEE700BCD407 /* CustomVideoPlayerViewController.swift */,
 			);
 			path = "TDS Video";
 			sourceTree = "<group>";
@@ -262,8 +262,6 @@
 				E9D513592D79B5C800B8A8B3 /* CarPlayViewContollerProtocal.swift */,
 				E9449D242C616DAF00EE64DF /* CarplayWKWebView.swift */,
 				E92F0F312DABD34F00ACB85D /* CarPlaySafari.swift */,
-				E9B3719F2C5D85D60013612E /* CarPlaySceneDelegate.swift */,
-				E9B5432A2C60EEE700BCD407 /* CustomVideoPlayerViewController.swift */,
 				E98E7DCB2D8DF6F5008330D0 /* CustomWebViews.swift */,
 				E9B371212C5D7B830013612E /* TDS Video */,
 				E9B371A92C5D86080013612E /* Carplayintent */,
