@@ -29,6 +29,7 @@ playground.xcworkspace
 # hence it is not needed unless you have added a package configuration file to your project
 # .swiftpm
 
+temp_auto_push.bat
 .build/
 
 # CocoaPods
@@ -60,3 +61,4 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+temp_interactive_push.bat

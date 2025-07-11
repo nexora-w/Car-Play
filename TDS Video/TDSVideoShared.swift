@@ -1,21 +1,22 @@
 import Foundation
 import AVFoundation
 import UIKit
+import CarPlay
 
-enum CarplayType {
+@objc enum CarplayType: Int {
     case video
     case web
     case rawVideo
     case IOSAPP
 }
 
-class CarplayComClass {
-    var type: CarplayType
-    var URL: URL?
-    var AVplayer: AVPlayer?
+@objc class CarplayComClass: NSObject {
+    @objc var type: CarplayType
+    @objc var URL: URL?
+    @objc var AVplayer: AVPlayer?
     var reloadWeb: (() -> Void)?
     
-    init(type: CarplayType, URL: URL? = nil, AVplayer: AVPlayer? = nil, reloadWeb: (() -> Void)? = nil) {
+    @objc init(type: CarplayType, URL: URL? = nil, AVplayer: AVPlayer? = nil, reloadWeb: (() -> Void)? = nil) {
         self.type = type
         self.URL = URL
         self.AVplayer = AVplayer
@@ -23,12 +24,14 @@ class CarplayComClass {
     }
 }
 
-class TDSVideoShared {
-    static let shared = TDSVideoShared()
+@objc class TDSVideoShared: NSObject {
+    @objc static let shared = TDSVideoShared()
     
-    var VideoPlayerForFile: AVPlayer?
-    var window: UIWindow?
-    var CarPlayComp: ((CarplayComClass) -> Void)?
+    @objc var VideoPlayerForFile: AVPlayer?
+    @objc var window: UIWindow?
+    @objc var CarPlayComp: ((CarplayComClass) -> Void)?
     
-    private init() {}
+    private override init() {
+        super.init()
+    }
 } 
