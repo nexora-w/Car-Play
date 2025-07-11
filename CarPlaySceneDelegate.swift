@@ -10,13 +10,20 @@ import UIKit
 import AVKit
 import ReplayKit
 
+// Import custom modules
+@_exported import class TDS_Video.TDSVideoShared
+@_exported import class TDS_Video.ScreenCaptureManager
+@_exported import class TDS_Video.TDSVideoURlFromOutSideOFAppListener
+@_exported import class TDS_Video.CustomWebViewController
+@_exported import class TDS_Video.TDSCarplayAccess
 
 extension CPTemplateApplicationScene {
     
     
     
-    func _shouldCreateCarWindow(){
+    func _shouldCreateCarWindow() -> Bool {
         print("CPTemplateApplicationScene")
+        return true
     }
 }
 
@@ -92,10 +99,10 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
             case .video:
                 self.playVideo(url: url.URL!)
             
-                case .web:
+            case .web:
                 self.loadWebPage()
                 
-                case .rawVideo:
+            case .rawVideo:
                 self.rawVideo(player: url.AVplayer)
                 
             case .IOSAPP:
@@ -112,7 +119,7 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
             print(url)
             if let url = URL(string: url) {
                 CustomWebViewController.shared.loadURL(url)
-                TDSVideoShared.shared.CarPlayComp?(.init(type: .web))
+                TDSVideoShared.shared.CarPlayComp?(CarplayComClass(type: .web, URL: url, AVplayer: nil, reloadWeb: nil))
             }
         }
         
@@ -210,57 +217,30 @@ class CarPlaySceneDelegate: UIResponder, CPTemplateApplicationSceneDelegate, CPM
     
     
     func loadIOS() {
-        
-        ScreenCaptureManager.shared.CarPlaysideofcarchange = { (offset: SingleEdgeOffset) in
-            DispatchQueue.main.async {
-                if let rootViewController = self.window?.rootViewController {
-                    // Remove all existing constraints affecting CarPlayVideoImageView
-                    NSLayoutConstraint.deactivate(self.CarPlayVideoImageView.constraints)
-                    self.CarPlayVideoImageView.removeFromSuperview()
-                    rootViewController.view.addSubview(self.CarPlayVideoImageView)
-                    self.CarPlayVideoImageView.translatesAutoresizingMaskIntoConstraints = false
-                    NSLayoutConstraint.activate([
-                        self.CarPlayVideoImageView.topAnchor.constraint(equalTo: rootViewController.view.topAnchor, constant: offset.topValue),
-                        self.CarPlayVideoImageView.bottomAnchor.constraint(equalTo: rootViewController.view.bottomAnchor, constant: offset.bottomValue),
-                        self.CarPlayVideoImageView.leadingAnchor.constraint(equalTo: rootViewController.view.leadingAnchor, constant: offset.leftValue),
-                        self.CarPlayVideoImageView.trailingAnchor.constraint(equalTo: rootViewController.view.trailingAnchor, constant: offset.rightValue)
-                    ])
-
-                    rootViewController.view.setNeedsLayout()
-                    rootViewController.view.layoutIfNeeded()
-                }
-            }
-        }
-
-
-          
         for subview in window!.subviews {
             subview.removeFromSuperview()
             print(subview)
         }
         
-         self.window?.isUserInteractionEnabled = true
-         self.window?.rootViewController = UIViewController()
-         self.window?.rootViewController?.view.isUserInteractionEnabled = true
+        self.window?.isUserInteractionEnabled = true
+        self.window?.rootViewController = UIViewController()
+        self.window?.rootViewController?.view.isUserInteractionEnabled = true
 
-
-         // Properly add the CustomWebViewController's view to the window
-         if let rootViewController = self.window?.rootViewController {
-             CarPlayVideoImageView.backgroundColor = .black
-             CarPlayVideoImageView.contentMode = .init(rawValue: ScreenCaptureManager.shared.selectedAspectRatio.rawValue) ??  .scaleAspectFill
-             rootViewController.view.addSubview(CarPlayVideoImageView)
-             CarPlayVideoImageView.translatesAutoresizingMaskIntoConstraints = false
-             NSLayoutConstraint.activate([
-                 CarPlayVideoImageView.topAnchor.constraint(equalTo: rootViewController.view.topAnchor, constant: offsetStyle.topValue),
-                 CarPlayVideoImageView.bottomAnchor.constraint(equalTo: rootViewController.view.bottomAnchor, constant: offsetStyle.bottomValue),
-                 CarPlayVideoImageView.leadingAnchor.constraint(equalTo: rootViewController.view.leadingAnchor, constant: offsetStyle.leftValue),
-                 CarPlayVideoImageView.trailingAnchor.constraint(equalTo: rootViewController.view.trailingAnchor, constant: offsetStyle.rightValue)
-             ])
-             CarPlayVideoImageView.backgroundColor = .black
-             ScreenCaptureManager.shared.addImageView(imageView: CarPlayVideoImageView,orientation: .init(rawValue: ScreenCaptureManager.shared.selectedOrientation.rawValue) ?? .left)
-         }
-       
-        
+        // Properly add the CustomWebViewController's view to the window
+        if let rootViewController = self.window?.rootViewController {
+            CarPlayVideoImageView.backgroundColor = .black
+            CarPlayVideoImageView.contentMode = .scaleAspectFill
+            rootViewController.view.addSubview(CarPlayVideoImageView)
+            CarPlayVideoImageView.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                CarPlayVideoImageView.topAnchor.constraint(equalTo: rootViewController.view.topAnchor, constant: offsetStyle.topValue),
+                CarPlayVideoImageView.bottomAnchor.constraint(equalTo: rootViewController.view.bottomAnchor, constant: offsetStyle.bottomValue),
+                CarPlayVideoImageView.leadingAnchor.constraint(equalTo: rootViewController.view.leadingAnchor, constant: offsetStyle.leftValue),
+                CarPlayVideoImageView.trailingAnchor.constraint(equalTo: rootViewController.view.trailingAnchor, constant: offsetStyle.rightValue)
+            ])
+            CarPlayVideoImageView.backgroundColor = .black
+            ScreenCaptureManager.shared.addImageView(imageView: CarPlayVideoImageView, orientation: .left)
+        }
     }
 }
 
