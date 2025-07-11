@@ -8,7 +8,6 @@
 import UIKit
 import AVFoundation
 import MediaPlayer
-import TDS_Video
 
 
 class CustomVideoPlayerViewController: UIViewController {
